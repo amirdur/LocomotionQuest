@@ -6,40 +6,38 @@ using UnityEngine;
 public class CollisionRay : MonoBehaviour
 {
     public Vector3 collision = Vector3.zero;
+    public Vector3 giz = Vector3.zero;
     public bool collided;
     public float maxdist;
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        var pos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-        var ray = new Ray(pos, this.transform.forward);
+        Vector3 boxPos = new Vector3(transform.position.x, 0.95f, transform.position.z);
+        Vector3 boxSize = new Vector3(0.5f, 1.81f, 0.5f);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, maxdist))
+        if (Physics.BoxCast(boxPos, boxSize*0.5f, transform.forward, out hit, transform.rotation))
         {
-            //Debug.Log(hit.distance);
             collision = new Vector3(hit.point.x, 0, hit.point.z);
+            giz = hit.point;
             collided = true;
         }
-        else 
+        else
         {
-            ray = new Ray(this.transform.position, this.transform.forward);
-            if (Physics.Raycast(ray, out hit, maxdist))
-            {
-                //Debug.Log(hit.distance);
-                collision = new Vector3(hit.point.x, 0, hit.point.z);
-                collided = true;
-            }
-            else
-            {
-                collided = false;
-            }
+            collided = false;
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(collision, 0.2f);
+        Gizmos.DrawRay(transform.position,transform.forward * maxdist);
+        
+        Vector3 boxPos = new Vector3(transform.position.x, 0.95f, transform.position.z);
+        Vector3 boxSize = new Vector3(0.5f, 1.81f, 0.5f);
+        RaycastHit hit;
+        if (Physics.BoxCast(boxPos, boxSize*0.5f, transform.forward, out hit, transform.rotation))
+        {
+            Gizmos.DrawWireCube(boxPos + transform.forward * hit.distance, boxSize);
+        }
     }
 }

@@ -20,21 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c294f00-4617-4fac-beeb-8a2f222af167" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/FadeMask.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/FadeMask.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/YourScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YourScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +39,22 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/Transferfunctions/Exponential.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Bases/DirectionInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/MouseRelativeX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/Directions/YawRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/Speeds/MaxAxisSpeedAbsolute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/KeyboardY.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/KeyboardX.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/MouseRelativeX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/TranslationMethods/JoystickTranslation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Bases/SpeedInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/KeyboardY.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/KeyboardX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Interfaces/IProvidesDirectionInput.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/CollisionRay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/MouseHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" />
     </changedPaths>
@@ -90,10 +84,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7244">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="7244" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -116,6 +110,10 @@
       <workItem from="1621413665353" duration="7249000" />
       <workItem from="1621495619952" duration="10461000" />
       <workItem from="1631805003153" duration="5557000" />
+      <workItem from="1631984983818" duration="633000" />
+      <workItem from="1632057516530" duration="559000" />
+      <workItem from="1632147697171" duration="5291000" />
+      <workItem from="1632223203566" duration="5167000" />
     </task>
     <servers />
   </component>

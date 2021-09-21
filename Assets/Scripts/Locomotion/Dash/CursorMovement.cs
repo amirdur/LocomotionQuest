@@ -12,13 +12,21 @@ public class CursorMovement: MonoBehaviour
     public Transform cam;
     public bool moved = true;
 
+    private void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
+
         if (!Input.GetMouseButton(0) && moved)
         {
-            transform.position = cam.position + cam.forward * _minDashRange;
-            //transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            var campos = new Vector3(cam.position.x, 0.6f, cam.position.z);
+            transform.position = campos + transform.forward * _minDashRange;
+            
         }
     }
 
@@ -27,14 +35,18 @@ public class CursorMovement: MonoBehaviour
         Debug.Log(Vector3.Distance(cam.position, transform.position));
         if (Vector3.Distance(cam.position, transform.position) <= _maxDashRange)
         {
-            transform.position = cam.position + cam.forward * Vector3.Distance(cam.position, transform.position);
-            transform.position += Time.deltaTime * speed * cam.forward;
-            //transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            var campos = new Vector3(cam.position.x, 0.6f, cam.position.z);
+            //transform.position = campos + transform.forward * Vector3.Distance(cam.position, transform.position);
+             transform.position += Time.deltaTime * speed * transform.forward;
+            
         }
         else
         {
-            transform.position = cam.position + cam.forward * _maxDashRange;
-            //transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            var campos = new Vector3(cam.position.x, 0.6f, cam.position.z);
+           // transform.position = campos + transform.forward * _maxDashRange;
+            
         }
     }
 

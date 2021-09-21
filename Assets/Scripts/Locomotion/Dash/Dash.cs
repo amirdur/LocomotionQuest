@@ -15,19 +15,21 @@ namespace Locomotion
         public GameObject target;
         public CursorMovement targetCursor;
         public CollisionRay collisionRay;
+        public Transform cam;
         
         
         private float midDashRange;
         
         private void Start()
         {
+            cam = Camera.main.transform;
             targetCursor.SetRanges(minDashRange, maxDashRange);
             collisionRay.maxdist = maxDashRange;
         }
 
         private void Update()
         {
-            //collisionAnimator.SetBool("Collision", false);
+            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
             if (Input.GetMouseButtonDown(0)) //Linker Mausbutton einmaliger return
             {
                 targetCursor.moved = false;
