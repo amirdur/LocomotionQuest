@@ -21,12 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7c294f00-4617-4fac-beeb-8a2f222af167" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/FadeMask.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/FadeMask.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/CollisionMask.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/CollisionMask.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Cone.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Cone.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/collisionFade.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/collisionFade.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/targetbobbin.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/targetbobbin.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Targetcone.blend" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Targetcone.blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/YourScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YourScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/masks/Materials/Fade.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/masks/Materials/Fade.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +43,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/Transferfunctions/Exponential.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4D9F1448-54E4-4B48-B32B-352F99EC3435/19/5f93ae80/Physics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Bases/DirectionInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/MouseRelativeX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,9 +60,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/CollisionRay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/MouseHandler.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sQgkwlc6NWd08BZLuuJpiS0Thh" />
@@ -114,6 +120,7 @@
       <workItem from="1632057516530" duration="559000" />
       <workItem from="1632147697171" duration="5291000" />
       <workItem from="1632223203566" duration="5167000" />
+      <workItem from="1632242965623" duration="6856000" />
     </task>
     <servers />
   </component>

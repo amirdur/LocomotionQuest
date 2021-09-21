@@ -46,18 +46,20 @@ namespace Locomotion
                 {
                     if (Vector3.Distance(collisionRay.collision, transform.position) < Vector3.Distance(endPoint, transform.position))
                     {
+                        collisionAnimator.SetBool("Collision", true);
                         StartCoroutine(DoDash(collisionRay.collision, true));
-                        //collisionAnimator.SetBool("Collision", true);
                         targetCursor.moved = true;
                     }
                     else
                     {
+                        collisionAnimator.SetBool("Collision", false);
                         StartCoroutine(DoDash(endPoint, false));
                         targetCursor.moved = true;
                     }
                 }
                 else
                 {
+                    collisionAnimator.SetBool("Collision", false);
                     StartCoroutine(DoDash(endPoint, false));
                     targetCursor.moved = true;
                 }
@@ -74,7 +76,7 @@ namespace Locomotion
             
             if (collision)
             {
-                endPoint = LerpByDistance(startPoint, endPoint, Vector3.Distance(startPoint, endPoint) - 1.0f);
+                endPoint = LerpByDistance(startPoint, endPoint, Vector3.Distance(startPoint, endPoint) - minDashRange);
             }
             
             while (elapsed < dashTime)

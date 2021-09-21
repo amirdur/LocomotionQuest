@@ -23,9 +23,9 @@ public class CursorMovement: MonoBehaviour
 
         if (!Input.GetMouseButton(0) && moved)
         {
-            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
-            var campos = new Vector3(cam.position.x, 0.6f, cam.position.z);
-            transform.position = campos + transform.forward * _minDashRange;
+            //transform.rotation = new Quaternion(transform.rotation.x, cam.rotation.y, 0.0f, cam.rotation.w);
+            var campos = new Vector3(cam.position.x, 0.5f, cam.position.z);
+            transform.position = campos + cam.transform.forward * _minDashRange;
             
         }
     }
@@ -35,16 +35,16 @@ public class CursorMovement: MonoBehaviour
         Debug.Log(Vector3.Distance(cam.position, transform.position));
         if (Vector3.Distance(cam.position, transform.position) <= _maxDashRange)
         {
-            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
-            var campos = new Vector3(cam.position.x, 0.6f, cam.position.z);
+            //transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            var campos = new Vector3(cam.position.x, 0.5f, cam.position.z);
             //transform.position = campos + transform.forward * Vector3.Distance(cam.position, transform.position);
-             transform.position += Time.deltaTime * speed * transform.forward;
+             transform.position += Time.deltaTime * speed * cam.transform.forward;
             
         }
         else
         {
-            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
-            var campos = new Vector3(cam.position.x, 0.6f, cam.position.z);
+           // transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
+            var campos = new Vector3(cam.position.x, 0.5f, cam.position.z);
            // transform.position = campos + transform.forward * _maxDashRange;
             
         }
@@ -55,10 +55,5 @@ public class CursorMovement: MonoBehaviour
         _minDashRange = min;
         _maxDashRange = max;
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("KOLLISION!!!!");
-     
-    }
+    
 }
