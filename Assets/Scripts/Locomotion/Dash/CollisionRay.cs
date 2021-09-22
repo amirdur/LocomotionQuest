@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class CollisionRay : MonoBehaviour
 {
-    public Vector3 collision = Vector3.zero;
-    public Vector3 giz = Vector3.zero;
-    public bool collided;
-    public float maxdist;
+    private Vector3 _collision = Vector3.zero;
+    private bool _collided;
+    private float _maxdist;
 
     private void FixedUpdate()
     {
@@ -17,20 +16,19 @@ public class CollisionRay : MonoBehaviour
         RaycastHit hit;
         if (Physics.BoxCast(boxPos, boxSize*0.5f, transform.forward, out hit, transform.rotation))
         {
-            collision = new Vector3(hit.point.x, 0, hit.point.z);
-            giz = hit.point;
-            collided = true;
+            _collision = new Vector3(hit.point.x, 0, hit.point.z);
+            _collided = true;
         }
         else
         {
-            collided = false;
+            _collided = false;
         }
     }
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position,transform.forward * maxdist);
+        Gizmos.DrawRay(transform.position,transform.forward * _maxdist);
         
         Vector3 boxPos = new Vector3(transform.position.x, 0.95f, transform.position.z);
         Vector3 boxSize = new Vector3(0.5f, 1.81f, 0.5f);
@@ -40,4 +38,20 @@ public class CollisionRay : MonoBehaviour
             Gizmos.DrawWireCube(boxPos + transform.forward * hit.distance, boxSize);
         }
     }
+
+    public bool Collided()
+    {
+        return _collided;
+    }
+
+    public Vector3 CollisionVector()
+    {
+        return _collision;
+    }
+
+    public void SetMaxditance(float f)
+    {
+        _maxdist = f;
+    }
+    
 }

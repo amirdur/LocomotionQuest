@@ -831,8 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  player: {fileID: 1232545880}
-  moved: 1
+  _player: {fileID: 1232545880}
 --- !u!95 &284639867
 Animator:
   serializedVersion: 3
@@ -3724,14 +3723,12 @@ MonoBehaviour:
   minDashRange: 1
   maxDashRange: 20
   dashTime: 0.15
-  fadeAnimator: {fileID: 316655835}
-  collisionAnimator: {fileID: 0}
   moveOnColliion: 1
   collisionMask: {fileID: 1631177141}
   target: {fileID: 284639862}
-  targetCursor: {fileID: 284639864}
+  targetCursorScript: {fileID: 284639864}
   collisionRay: {fileID: 1232545883}
-  cam: {fileID: 963194228}
+  fadeAnimator: {fileID: 316655835}
 --- !u!114 &1232545882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3758,10 +3755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e1681c370b5294094e125e3c5b3b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collision: {x: 0, y: 0, z: 0}
-  giz: {x: 0, y: 0, z: 0}
-  collided: 0
-  maxdist: 0
 --- !u!1001 &1239252005
 PrefabInstance:
   m_ObjectHideFlags: 0

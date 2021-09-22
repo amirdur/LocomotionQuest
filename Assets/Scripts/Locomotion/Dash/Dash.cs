@@ -1,66 +1,62 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Locomotion
+namespace Locomotion.Dash
 {
     public class Dash : MonoBehaviour
     {
-        private float startTime;
-        [SerializeField] private float minDashRange = 1f;
-        [SerializeField] private float maxDashRange = 10f;
-        [SerializeField] private float dashTime = 0.2f;
-        [SerializeField] private Animator fadeAnimator;
-        [SerializeField] private Animator collisionAnimator;
+        
+        [SerializeField] private float minDashRange = 1.0f;
+        [SerializeField] private float maxDashRange = 15.0f;
+        [SerializeField] private float dashTime = 0.15f;
         [SerializeField] private bool moveOnColliion;
-        public GameObject collisionMask;
-        private Animation collisionAnimation;
-        public GameObject target;
-        public CursorMovement targetCursor;
-        public CollisionRay collisionRay;
-        public Transform cam;
+        [SerializeField] private GameObject collisionMask;
+        [SerializeField] private GameObject target;
+        [SerializeField] private CursorMovement targetCursorScript;
+        [SerializeField] private CollisionRay collisionRay;
+        [SerializeField] private Animator fadeAnimator;
         
-        
-        private float midDashRange;
-        
+        private float _startTime;
+        private Animation _collisionAnimation;
+        private Transform _cam;
+
         private void Start()
         {
-            collisionAnimation = collisionMask.GetComponent<Animation>();
-            collisionAnimation.wrapMode = WrapMode.Once;
-            cam = Camera.main.transform;
-            targetCursor.SetRanges(minDashRange, maxDashRange);
-            collisionRay.maxdist = maxDashRange;
+            _cam = Camera.main.transform;
+            _collisionAnimation = collisionMask.GetComponent<Animation>();
+            _collisionAnimation.wrapMode = WrapMode.Once;
+            targetCursorScript.SetRanges(minDashRange, maxDashRange);
+            collisionRay.SetMaxditance(maxDashRange);
         }
 
         private void Update()
         {
-            transform.rotation = new Quaternion(0.0f, cam.rotation.y, 0.0f, cam.rotation.w);
-            if (Input.GetMouseButtonDown(0)) //Linker Mausbutton einmaliger return
+            transform.rotation = new Quaternion(0.0f, _cam.rotation.y, 0.0f, _cam.rotation.w);
+            if (Input.GetMouseButtonDown(0))        //Linker Mausbutton einmaliger check
             {
-                targetCursor.moved = false;
+                targetCursorScript.SetMoved(false);
                 
             }
-            if (Input.GetMouseButton(0))    //Linker Mausklick wird gehalten
+            if (Input.GetMouseButton(0))            //Linker Mausklick wird gehalten
             {
-                CursorMove();
+                targetCursorScript.MoveCursor();
             }
-            else if (Input.GetMouseButtonUp(0)) // Linker Mausbutton losgelassen
+            else if (Input.GetMouseButtonUp(0))     //Linker Mausbutton losgelassen
             {
                 Vector3 endPoint = new Vector3(target.transform.position.x, 0, target.transform.position.z);
-                if (collisionRay.collided)
+                if (collisionRay.Collided())
                 {
-                    if (Vector3.Distance(collisionRay.collision, transform.position) < Vector3.Distance(endPoint, transform.position)
-                        || Vector3.Distance(collisionRay.collision, transform.position) < minDashRange)
+                    if (Vector3.Distance(collisionRay.CollisionVector(), transform.position) < Vector3.Distance(endPoint, transform.position)
+                        || Vector3.Distance(collisionRay.CollisionVector(), transform.position) < minDashRange)
                     {
-                        
-                        if (moveOnColliion)
+                        if (moveOnColliion)         //Falls bei Kollisionen Movement erlaubt wird
                         {
-                            StartCoroutine(DoDash(collisionRay.collision, true));
+                            StartCoroutine(DoDash(collisionRay.CollisionVector(), true));
                         }
                         else
                         {
-                            //StartCoroutine(Collision());
-                            collisionAnimation.Play();
-                            targetCursor.moved = true;
+                            _collisionAnimation.Play();
+                            targetCursorScript.SetMoved(true);
                         }
                     }
                     else
@@ -83,7 +79,7 @@ namespace Locomotion
             float elapsed = 0f;
             Vector3 startPoint = transform.position;
             
-            if (collision)
+            if (collision)      //Nur relevant falls trotz Kollision Movement erlaubt wird
             {
                 endPoint = LerpByDistance(startPoint, endPoint, Vector3.Distance(startPoint, endPoint) - minDashRange);
             }
@@ -96,27 +92,13 @@ namespace Locomotion
                 yield return null;
             }
             fadeAnimator.SetBool("Mask", false);
-            targetCursor.moved = true;
+            targetCursorScript.SetMoved(true);
         }
         
         public Vector3 LerpByDistance(Vector3 start, Vector3 end, float x)
         {
             Vector3 P = x * Vector3.Normalize(end - start) + start;
             return P;
-        }
-
-        private IEnumerator Collision()
-        {
-            collisionAnimator.SetBool("collision", true);
-            yield return new WaitForSeconds(0.1f);
-            targetCursor.moved = true;
-            collisionAnimator.SetBool("collision", false);
-            yield return null;
-        }
-        
-        public void CursorMove()
-        {
-            targetCursor.MoveCursor();
         }
     }
 }

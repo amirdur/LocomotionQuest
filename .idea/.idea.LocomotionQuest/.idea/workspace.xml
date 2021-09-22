@@ -21,15 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7c294f00-4617-4fac-beeb-8a2f222af167" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LocomotionQuest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CollisionMask.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CollisionMask.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/FadeMask.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/FadeMask.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/collisionFade.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/collisionFade.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/YourScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/YourScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/masks/Materials/CollisionMask.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Textures/masks/Materials/CollisionMask.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +52,8 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/CollisionRay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Steering/Inputs/MouseHandler.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/MouseHandler.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CollisionRay.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/CursorMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Locomotion/Dash/Dash.cs" />
     </changedPaths>
@@ -120,6 +115,7 @@
       <workItem from="1632223203566" duration="5167000" />
       <workItem from="1632242965623" duration="6856000" />
       <workItem from="1632300468349" duration="4860000" />
+      <workItem from="1632328906523" duration="3241000" />
     </task>
     <servers />
   </component>
