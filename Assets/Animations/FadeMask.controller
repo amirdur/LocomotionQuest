@@ -83,7 +83,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: fade
-  m_Speed: 20
+  m_Speed: 25
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4003188134211470229}
@@ -138,7 +138,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: reverseFade
-  m_Speed: 20
+  m_Speed: 25
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2841887427381322869}
