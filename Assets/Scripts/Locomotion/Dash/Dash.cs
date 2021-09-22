@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Locomotion
@@ -12,6 +11,9 @@ namespace Locomotion
         [SerializeField] private float dashTime = 0.2f;
         [SerializeField] private Animator fadeAnimator;
         [SerializeField] private Animator collisionAnimator;
+        [SerializeField] private bool moveOnColliion;
+        public GameObject collisionMask;
+        private Animation collisionAnimation;
         public GameObject target;
         public CursorMovement targetCursor;
         public CollisionRay collisionRay;
@@ -22,6 +24,8 @@ namespace Locomotion
         
         private void Start()
         {
+            collisionAnimation = collisionMask.GetComponent<Animation>();
+            collisionAnimation.wrapMode = WrapMode.Once;
             cam = Camera.main.transform;
             targetCursor.SetRanges(minDashRange, maxDashRange);
             collisionRay.maxdist = maxDashRange;
@@ -44,24 +48,29 @@ namespace Locomotion
                 Vector3 endPoint = new Vector3(target.transform.position.x, 0, target.transform.position.z);
                 if (collisionRay.collided)
                 {
-                    if (Vector3.Distance(collisionRay.collision, transform.position) < Vector3.Distance(endPoint, transform.position))
+                    if (Vector3.Distance(collisionRay.collision, transform.position) < Vector3.Distance(endPoint, transform.position)
+                        || Vector3.Distance(collisionRay.collision, transform.position) < minDashRange)
                     {
-                        collisionAnimator.SetBool("Collision", true);
-                        StartCoroutine(DoDash(collisionRay.collision, true));
-                        targetCursor.moved = true;
+                        
+                        if (moveOnColliion)
+                        {
+                            StartCoroutine(DoDash(collisionRay.collision, true));
+                        }
+                        else
+                        {
+                            //StartCoroutine(Collision());
+                            collisionAnimation.Play();
+                            targetCursor.moved = true;
+                        }
                     }
                     else
                     {
-                        collisionAnimator.SetBool("Collision", false);
                         StartCoroutine(DoDash(endPoint, false));
-                        targetCursor.moved = true;
                     }
                 }
                 else
                 {
-                    collisionAnimator.SetBool("Collision", false);
                     StartCoroutine(DoDash(endPoint, false));
-                    targetCursor.moved = true;
                 }
                 
             }
@@ -87,12 +96,22 @@ namespace Locomotion
                 yield return null;
             }
             fadeAnimator.SetBool("Mask", false);
+            targetCursor.moved = true;
         }
         
         public Vector3 LerpByDistance(Vector3 start, Vector3 end, float x)
         {
             Vector3 P = x * Vector3.Normalize(end - start) + start;
             return P;
+        }
+
+        private IEnumerator Collision()
+        {
+            collisionAnimator.SetBool("collision", true);
+            yield return new WaitForSeconds(0.1f);
+            targetCursor.moved = true;
+            collisionAnimator.SetBool("collision", false);
+            yield return null;
         }
         
         public void CursorMove()

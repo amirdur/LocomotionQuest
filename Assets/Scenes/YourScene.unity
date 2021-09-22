@@ -799,8 +799,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557f32fc6be2eff43939f17b80a051e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  cam: {fileID: 1232545880}
+  speed: 20
+  player: {fileID: 1232545880}
   moved: 1
 --- !u!95 &284639867
 Animator:
@@ -850,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 316655833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.017, y: -0, z: 0.97}
-  m_LocalScale: {x: 2.59, y: 1.19, z: 0.52}
+  m_LocalScale: {x: 2.65, y: 1.16, z: 0.4}
   m_Children: []
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
@@ -3260,9 +3260,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDashRange: 0.5
   maxDashRange: 10
-  dashTime: 0.1
+  dashTime: 0.2
   fadeAnimator: {fileID: 316655835}
-  collisionAnimator: {fileID: 1631177143}
+  collisionAnimator: {fileID: 0}
+  moveOnColliion: 0
+  collisionMask: {fileID: 1631177141}
   target: {fileID: 284639862}
   targetCursor: {fileID: 284639864}
   collisionRay: {fileID: 1232545883}
@@ -4066,25 +4068,22 @@ Transform:
   m_Father: {fileID: 963194228}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1631177143
-Animator:
-  serializedVersion: 3
+--- !u!111 &1631177143
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631177141}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 16dfba5a7cacc0149bf28b0639e661ac, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c0d9da554b9200047a0c3b2b31763cbc, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: c0d9da554b9200047a0c3b2b31763cbc, type: 2}
+  m_WrapMode: 1
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!64 &1631177144
 MeshCollider:
   m_ObjectHideFlags: 0
